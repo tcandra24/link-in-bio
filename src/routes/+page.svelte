@@ -22,29 +22,29 @@
   const demoTiles: Tile[] = [
     {
       id: 'd1',
-      title: 'Lihat 42 karya terbaru',
+      title: 'Show 42 Latest Works',
       url: '/demo',
       size: '2x1',
       color: 'tomato',
-      badge: 'Portofolio',
+      badge: 'Portfolio',
       icon: 'arrow_outward',
       isActive: true
     },
     {
       id: 'd2',
       title: 'Sticker Pack',
-      subtitle: 'Mulai 25k',
+      subtitle: 'Start from 25k',
       url: '/demo',
       size: '1x1',
       color: 'sun',
-      badge: 'Toko',
+      badge: 'Shop',
       icon: 'shopping_bag',
       isActive: true
     },
     {
       id: 'd3',
-      title: 'Vibes Kerja',
-      subtitle: 'Lofi sore hari',
+      title: 'Work vibes',
+      subtitle: 'Late afternoon lo-fi',
       url: '/demo',
       size: '1x1',
       color: 'mint',
@@ -66,33 +66,25 @@
 
   const steps = [
     {
-      label: 'Daftar & klaim',
-      title: 'Amankan tautan pribadi',
-      text: 'Klaim alamat seperti plot.id/namamu dalam hitungan detik.',
+      label: 'Sign up & claim',
+      title: 'Claim your personal link',
+      text: 'Claim an address like plot.id/yourname in seconds.',
       color: 'bg-sun'
     },
     {
-      label: 'Susun petak',
-      title: 'Kombinasi bebas',
-      text: 'Tambah tautan, catatan, toko, atau playlist. Atur ukuran dan warna tiap petak.',
+      label: 'Arrange tiles',
+      title: 'Free combination',
+      text: 'Add links, notes, shops, or playlists. Customize the size and color of each tile.',
       color: 'bg-mint'
     },
     {
-      label: 'Bagikan',
-      title: 'Satu link untuk semua',
-      text: 'Pasang di bio Instagram, TikTok, atau X. Audiensmu cukup membuka satu halaman.',
+      label: 'Share',
+      title: 'One link for all',
+      text: 'Put it in your Instagram, TikTok, or X bio. Your audience just needs to open one page.',
       color: 'bg-lilac'
     }
   ];
 </script>
-
-<svelte:head>
-  <title>{SITE.title}</title>
-  <meta name="description" content={SITE.description} />
-  <meta property="og:title" content={SITE.title} />
-  <meta property="og:description" content={SITE.description} />
-  <meta property="og:type" content="website" />
-</svelte:head>
 
 <div class="flex min-h-screen flex-col justify-between">
   <!-- Header -->
@@ -104,14 +96,14 @@
           class="neo-shadow-sm hidden rotate-1 items-center gap-1.5 rounded-full border-2 border-ink bg-sun px-3 py-1 font-mono text-xs font-bold md:inline-flex"
         >
           <span>✨</span>
-          <span>Satu papan untuk semua yang kamu bagikan</span>
+          <span>One board for all your links</span>
         </div>
       </div>
 
       <nav class="hidden items-center gap-6 font-display text-sm font-bold lg:flex">
-        <a href="#cara-kerja" class="transition-colors hover:text-rust">Cara kerja</a>
-        <a href="#fitur" class="transition-colors hover:text-rust">Fitur</a>
-        <a href="/demo" class="transition-colors hover:text-rust">Contoh papan</a>
+        <a href="#cara-kerja" class="transition-colors hover:text-rust">How it works</a>
+        <a href="#fitur" class="transition-colors hover:text-rust">Features</a>
+        <a href="/demo" class="transition-colors hover:text-rust">Board examples</a>
       </nav>
 
       <div class="flex items-center gap-2 sm:gap-3">
@@ -119,18 +111,18 @@
           href="/login"
           class="px-2.5 py-1.5 font-display text-xs font-bold transition-colors hover:text-rust sm:px-4 sm:py-2 sm:text-sm"
         >
-          Masuk
+          Getting Started
         </a>
         <a
           href="/register"
           class="neo-shadow-sm rounded-full border-2 border-ink bg-tomato px-3.5 py-2 font-display text-xs font-bold transition-all hover:neo-shadow active:translate-x-0.5 active:translate-y-0.5 sm:px-5 sm:py-2.5 sm:text-sm"
         >
-          Mulai gratis
+          Start free
         </a>
         <button
           type="button"
           onclick={() => (menuOpen = !menuOpen)}
-          aria-label="Menu navigasi"
+          aria-label="Navigation menu"
           aria-expanded={menuOpen}
           class="flex h-8 w-8 items-center justify-center rounded-lg border-2 border-ink bg-sand lg:hidden"
         >
@@ -144,16 +136,16 @@
         class="mt-3 flex animate-fade-in flex-col gap-2 border-t-2 border-ink pt-3 font-display text-sm font-bold lg:hidden"
       >
         <a href="#cara-kerja" onclick={() => (menuOpen = false)} class="rounded-lg p-2 hover:bg-sand">
-          Cara kerja
+          How it works
         </a>
         <a href="#fitur" onclick={() => (menuOpen = false)} class="rounded-lg p-2 hover:bg-sand">
-          Fitur
+          Features
         </a>
         <a
           href="/demo"
           class="neo-shadow-sm flex items-center justify-between rounded-lg border-2 border-ink bg-sun p-2"
         >
-          Contoh papan
+          Board examples
           <Icon name="arrow_forward" class="text-base" />
         </a>
       </nav>
@@ -176,18 +168,17 @@
             class="neo-shadow-sm inline-flex -rotate-1 items-center gap-2 self-start rounded-full border-2 border-ink bg-paper px-3.5 py-1.5"
           >
             <span class="h-2.5 w-2.5 animate-pulse rounded-full bg-pine"></span>
-            <span class="font-mono text-xs font-bold">Biolink bento untuk kreator independen</span>
+            <span class="font-mono text-xs font-bold">Biolink bento for independent creators</span>
           </div>
 
           <h1
             class="font-display text-4xl leading-[1.08] font-extrabold tracking-tight sm:text-6xl lg:text-7xl"
           >
-            Satu papan untuk yang kamu bagikan.
+            One board for what you share.
           </h1>
 
           <p class="max-w-xl text-base leading-relaxed text-muted sm:text-lg">
-            Bukan sekadar deretan tombol. Kumpulkan karya, media sosial, tautan toko, dan catatan
-            pentingmu dalam papan bento bergaya kolase stiker.
+            It's more than just a row of buttons. Gather your work, social media, shop links, and important notes onto a sticker-collage style bento board.
           </p>
 
           <!-- Klaim username -->
@@ -207,7 +198,7 @@
                 type="text"
                 required
                 autocomplete="off"
-                placeholder="namakamu"
+                placeholder="your name"
                 pattern={'[a-z0-9_]{3,20}'}
                 value={handle}
                 oninput={cleanHandle}
@@ -227,7 +218,7 @@
               type="submit"
               class="neo-shadow-sm flex shrink-0 items-center justify-center gap-1.5 rounded-xl border-2 border-ink bg-tomato px-6 py-3 font-display text-sm font-bold transition-all hover:neo-shadow active:translate-x-0.5 active:translate-y-0.5"
             >
-              Klaim plotmu
+              Claim your plot
               <Icon name="arrow_forward" class="text-base" />
             </button>
           </form>
@@ -235,12 +226,12 @@
           <div class="flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-xs text-muted">
             <span class="flex items-center gap-1">
               <Icon name="lock" class="text-sm text-rust" />
-              Amankan nama unikmu lebih dulu
+              Secure your unique name first
             </span>
             <span class="hidden sm:inline">•</span>
             <span class="flex items-center gap-1">
               <Icon name="verified" class="text-sm text-pine" />
-              Gratis &amp; instan
+              Free &amp; instant
             </span>
           </div>
         </div>
@@ -299,13 +290,13 @@
             class="neo-shadow-sm mb-3 inline-flex items-center gap-1.5 rounded-full border-2 border-ink bg-sun px-3 py-1 font-mono text-xs font-bold"
           >
             <Icon name="bolt" class="text-sm" />
-            Langkah cepat
+            Quick Start
           </div>
           <h2 class="font-display text-3xl font-extrabold tracking-tight sm:text-5xl">
-            Hanya butuh beberapa menit untuk punya papan sendiri.
+            Only takes a few minutes to have your own board.
           </h2>
           <p class="mt-3 text-muted">
-            Semudah menempel stiker di buku catatan. Tanpa coding, tanpa template kaku.
+            As easy as sticking a sticker on a notebook. No coding, no rigid templates.
           </p>
         </div>
 
@@ -336,13 +327,13 @@
           <span
             class="neo-shadow-sm mb-3 inline-block rounded-full border-2 border-ink bg-lilac px-3 py-1 font-mono text-xs font-bold uppercase"
           >
-            Fitur kreatif
+            Creative freature
           </span>
           <h2 class="font-display text-3xl font-extrabold tracking-tight sm:text-5xl">
-            Biolink yang terasa seperti karya orisinal.
+            A Biolink that feels like an original creation.
           </h2>
-          <p class="mt-3 text-muted">
-            Tinggalkan daftar vertikal yang membosankan. Tampilkan duniamu dalam format kanvas.
+          <p class="mt-3 text-muted">            
+            Ditch the boring vertical list. Showcase your world in a canvas format.
           </p>
         </div>
 
@@ -351,17 +342,17 @@
             class="neo-shadow flex flex-col justify-between gap-6 rounded-3xl border-2 border-ink bg-tomato p-6 md:col-span-2"
           >
             <div>
-              <span class="font-mono text-xs font-bold uppercase">Cepat &amp; responsif</span>
-              <h3 class="mt-1 font-display text-2xl font-extrabold">Papan publik yang mengalir</h3>
+              <span class="font-mono text-xs font-bold uppercase">Quick &amp; responsive</span>
+              <h3 class="mt-1 font-display text-2xl font-extrabold">Fluid public board</h3>
               <p class="mt-1 max-w-lg text-sm">
-                Halaman dirender di server, jadi terbuka cepat dan tampil rapi di ponsel maupun
-                layar lebar.
+                Pages are server-rendered, so they load quickly and look great on both mobile and
+                widescreen displays.
               </p>
             </div>
             <div class="flex flex-wrap gap-2 font-mono text-xs font-bold">
-              <span class="rounded-full border-2 border-ink bg-paper px-3 py-1">⚡ Super ringan</span>
-              <span class="rounded-full border-2 border-ink bg-paper px-3 py-1">📱 Responsif</span>
-              <span class="rounded-full border-2 border-ink bg-paper px-3 py-1">🔎 Ramah SEO</span>
+              <span class="rounded-full border-2 border-ink bg-paper px-3 py-1">⚡ Super light</span>
+              <span class="rounded-full border-2 border-ink bg-paper px-3 py-1">📱 Responsive</span>
+              <span class="rounded-full border-2 border-ink bg-paper px-3 py-1">🔎 SEO friendly</span>
             </div>
           </div>
 
@@ -372,12 +363,12 @@
               <span class="font-mono text-xs font-bold uppercase">Modular</span>
               <h3 class="mt-1 font-display text-2xl font-extrabold">Atur ukuran petak</h3>
               <p class="mt-1 text-sm">
-                Pilih 1×1, 2×1, atau 2×2 untuk setiap petak, lalu susun urutannya.
+                Choose 1×1, 2×1, or 2×2 for each tile, then arrange them.
               </p>
             </div>
             <div class="flex items-center gap-2 font-mono text-xs font-bold">
               <Icon name="drag_indicator" class="text-base" />
-              Geser untuk mengurutkan
+              Drag to reorder
             </div>
           </div>
 
@@ -385,13 +376,13 @@
             class="neo-shadow flex flex-col justify-between gap-6 rounded-3xl border-2 border-ink bg-mint p-6"
           >
             <div>
-              <span class="font-mono text-xs font-bold uppercase">Statistik</span>
-              <h3 class="mt-1 font-display text-2xl font-extrabold">Hitung setiap klik</h3>
-              <p class="mt-1 text-sm">Lihat petak mana yang paling sering dibuka audiensmu.</p>
+              <span class="font-mono text-xs font-bold uppercase">Statistics</span>
+              <h3 class="mt-1 font-display text-2xl font-extrabold">Track every click</h3>
+              <p class="mt-1 text-sm">See which tiles are getting the most attention from your audience.</p>
             </div>
             <div class="flex items-center gap-2 font-mono text-xs font-bold">
               <Icon name="trending_up" class="text-base" />
-              Klik 7 hari terakhir
+              Last 7 days
             </div>
           </div>
 
@@ -399,24 +390,23 @@
             class="neo-shadow flex flex-col justify-between gap-6 rounded-3xl border-2 border-ink bg-lilac p-6 md:col-span-2"
           >
             <div>
-              <span class="font-mono text-xs font-bold uppercase">Tema &amp; gaya</span>
+              <span class="font-mono text-xs font-bold uppercase">Theme &amp; style</span>
               <h3 class="mt-1 font-display text-2xl font-extrabold">
-                Kertas, Malam, atau Permen
+                Paper, Night, or Candy
               </h3>
               <p class="mt-1 max-w-lg text-sm">
-                Ganti seluruh tampilan profil dalam satu ketukan, dengan palet yang tetap nyaman
-                dibaca.
+                Change the entire profile look with one tap, using a palette that remains easy to read.
               </p>
             </div>
             <div class="flex flex-wrap gap-2 font-mono text-xs font-bold">
               <a href="/demo?theme=kertas" class="rounded-full border-2 border-ink bg-paper px-3 py-1">
-                Kertas
+                Paper
               </a>
               <a href="/demo?theme=malam" class="rounded-full border-2 border-ink bg-ink px-3 py-1 text-paper">
-                Malam
+                Clay
               </a>
               <a href="/demo?theme=permen" class="rounded-full border-2 border-ink bg-candy px-3 py-1">
-                Permen
+                Candy
               </a>
             </div>
           </div>
@@ -430,27 +420,27 @@
         <span
           class="neo-shadow-sm rounded-full border-2 border-ink bg-paper px-3 py-1 font-mono text-xs font-bold"
         >
-          🚀 Mulai tanpa biaya
+          🚀 Start for free
         </span>
         <h2 class="font-display text-3xl font-extrabold tracking-tight sm:text-5xl">
-          Siap membuat biolink yang benar-benar mewakili dirimu?
+          Ready to create a biolink that truly represents you?
         </h2>
         <p class="max-w-xl">
-          Klaim tautan unikmu hari ini dan susun papan bento pertamamu dalam hitungan menit.
+          Claim your unique link today and set up your first bento board in minutes.
         </p>
         <div class="flex flex-wrap justify-center gap-3">
           <a
             href="/register"
             class="neo-shadow flex items-center gap-2 rounded-full border-2 border-ink bg-ink px-6 py-3 font-display text-sm font-bold text-paper transition-all hover:neo-shadow-lg active:translate-x-0.5 active:translate-y-0.5"
           >
-            Mulai gratis sekarang
+            Start for free
             <Icon name="arrow_forward" class="text-base" />
           </a>
           <a
             href="/demo"
             class="neo-shadow rounded-full border-2 border-ink bg-paper px-6 py-3 font-display text-sm font-bold transition-all hover:neo-shadow-lg active:translate-x-0.5 active:translate-y-0.5"
           >
-            Lihat contoh papan
+            View demo board
           </a>
         </div>
       </div>
@@ -464,14 +454,13 @@
     >
       <div class="flex flex-col items-center gap-2 md:items-start">
         <Logo light />
-        <p class="opacity-70">Kurasi tautan, galeri, musik &amp; cerita dalam satu kanvas bento.</p>
+        <p class="opacity-70">Link curation, galleries, music &amp; story in one bento canvas.</p>
       </div>
       <nav class="flex gap-5 font-bold">
-        <a href="#cara-kerja" class="hover:text-sun">Cara kerja</a>
-        <a href="#fitur" class="hover:text-sun">Fitur</a>
-        <a href="/demo" class="hover:text-sun">Contoh</a>
+        <a href="#cara-kerja" class="hover:text-sun">How it works</a>
+        <a href="#fitur" class="hover:text-sun">Features</a>
+        <a href="/demo" class="hover:text-sun">Demo</a>
       </nav>
-      <span class="opacity-70">Dibuat dengan ❤️ di Indonesia</span>
     </div>
   </footer>
 </div>

@@ -12,7 +12,7 @@
 
 <a {href} class="flex items-center gap-2" aria-label="{SITE.name} — beranda">
 	<span
-		class="neo-shadow-sm border-ink bg-tomato flex h-8 w-8 rotate-[-3deg] items-center justify-center rounded-xl border-2 sm:h-9 sm:w-9"
+		class="neo-shadow-sm border-ink bg-tomato flex h-8 w-8 -rotate-3 items-center justify-center rounded-xl border-2 sm:h-9 sm:w-9"
 	>
 		<Icon name="grid_view" filled class="text-ink text-lg sm:text-xl" />
 	</span>

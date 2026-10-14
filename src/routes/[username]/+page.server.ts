@@ -13,13 +13,13 @@ export const load: PageServerLoad = async ({ params }) => {
 
   // Bentuk yang mustahil jadi username tidak perlu sampai ke database
   if (!isValidUsername(username)) {
-    error(404, 'Halaman tidak ditemukan');
+    error(404, 'Page Not Found');
   }
 
   const board = await getPublicBoard(username);
 
   if (!board) {
-    error(404, `Petak @${username} belum diklaim`);
+    error(404, `Board @${username} not found`);
   }
 
   return board; // { profile, tiles }

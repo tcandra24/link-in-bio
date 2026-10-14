@@ -37,7 +37,7 @@
       class="inline-flex shrink-0 items-center gap-1 rounded-full border border-ink bg-sun px-3 py-1.5 font-mono text-[11px] font-bold transition-transform hover:scale-105 active:scale-95 sm:text-xs"
     >
       <Icon name="share" class="text-sm" />
-      Bagikan
+      Share
     </button>
   </div>
 
@@ -61,7 +61,7 @@
       <p
         class="neo-shadow w-full rounded-3xl border-2 border-dashed border-(--edge) p-8 text-center font-mono text-sm opacity-80"
       >
-        Papan ini masih kosong.
+        This Board is still empty.
       </p>
     {/if}
 
@@ -71,11 +71,11 @@
         href="/register"
         class="neo-shadow flex items-center gap-2 rounded-full border-2 border-ink bg-paper px-6 py-3 font-display text-sm font-bold text-ink transition-all hover:neo-shadow-lg active:translate-x-0.5 active:translate-y-0.5"
       >
-        Bikin papanmu sendiri di {SITE.name}
+        Create your own board on {SITE.name}
         <Icon name="arrow_forward" class="text-base" />
       </a>
       <span class="font-mono text-[11px] font-bold tracking-widest uppercase opacity-60">
-        Papan tautan bento • {SITE.domain}
+        Bento link board • {SITE.domain}
       </span>
     </div>
   </main>

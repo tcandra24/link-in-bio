@@ -6,22 +6,22 @@
 
   let username = $derived(page.params.username);
   let notFound = $derived(page.status === 404);
-  let unclaimed = $derived(notFound && !!username && page.error?.message?.includes('belum diklaim'));
+  let unclaimed = $derived(notFound && !!username && page.error?.message?.includes('unclaimed'));
 
   let title = $derived(
     unclaimed
-      ? `Petak @${username} belum diklaim`
+      ? `Plot @${username} unclaimed`
       : notFound
-        ? 'Halaman tidak ditemukan'
-        : 'Ada yang tidak beres'
+        ? 'Page Not Found'
+        : 'Something Went Wrong'
   );
 
   let text = $derived(
     unclaimed
-      ? 'Username ini masih kosong. Klaim sekarang sebelum diambil orang lain.'
+      ? 'This username is still available. Claim it now before someone else takes it.'
       : notFound
-        ? 'Alamat yang kamu buka tidak ada. Mungkin salah ketik?'
-        : 'Terjadi masalah di sisi kami. Coba muat ulang beberapa saat lagi.'
+        ? 'The page you are looking for does not exist. Maybe there was a typo?'
+        : 'There was a problem on our end. Please try reloading in a moment.'
   );
 </script>
 
@@ -49,7 +49,7 @@
           href="/register?username={encodeURIComponent(username ?? '')}"
           class="neo-shadow-sm flex items-center gap-1.5 rounded-full border-2 border-ink bg-tomato px-5 py-2.5 font-display text-sm font-bold transition-all hover:neo-shadow active:translate-x-0.5 active:translate-y-0.5"
         >
-          Klaim username ini
+          Claim this username
           <Icon name="arrow_forward" class="text-base" />
         </a>
       {/if}
@@ -57,7 +57,7 @@
         href="/"
         class="neo-shadow-sm rounded-full border-2 border-ink bg-paper px-5 py-2.5 font-display text-sm font-bold transition-all hover:neo-shadow active:translate-x-0.5 active:translate-y-0.5"
       >
-        Ke beranda
+        To Home
       </a>
     </div>
   </div>

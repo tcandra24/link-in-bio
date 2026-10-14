@@ -16,9 +16,9 @@
 <header class="relative mt-2 mb-6 flex w-full flex-col items-center text-center sm:mt-4">
 	<!-- Pita washi -->
 	<div
-		class="neo-shadow-sm border-ink bg-sun/85 text-ink mb-3 flex h-5 w-28 rotate-[-2deg] items-center justify-center border font-mono text-[9px] font-bold tracking-widest uppercase sm:h-6 sm:text-[10px]"
+		class="neo-shadow-sm border-ink bg-sun/85 text-ink mb-3 flex h-5 w-28 -rotate-2 items-center justify-center border font-mono text-[9px] font-bold tracking-widest uppercase sm:h-6 sm:text-[10px]"
 	>
-		Papan tautan
+		Link board
 	</div>
 
 	<!-- Avatar -->

@@ -71,7 +71,7 @@ export async function getPublicBoard(username: string) {
 
   if (queryError) {
     console.error('getPublicBoard gagal:', queryError.message);
-    error(500, 'Papan tidak bisa dimuat saat ini.');
+    error(500, 'Board cannot be loaded at this time.');
   }
 
   if (!data) return null;

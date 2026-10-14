@@ -41,19 +41,19 @@
     <div class="flex items-center justify-between border-b-2 border-ink pb-2">
       <div class="flex items-center gap-2">
         <Icon name="share" class="text-rust" />
-        <h2 class="font-display text-lg font-bold">Bagikan papan</h2>
+        <h2 class="font-display text-lg font-bold">Share board</h2>
       </div>
       <button
         type="button"
         onclick={() => (open = false)}
-        aria-label="Tutup"
+        aria-label="Close"
         class="flex h-8 w-8 items-center justify-center rounded-full border border-ink bg-sand hover:bg-washi"
       >
         <Icon name="close" class="text-base" />
       </button>
     </div>
 
-    <p class="text-sm text-muted">Tempel tautan ini di bio Instagram, TikTok, atau di mana saja.</p>
+    <p class="text-sm text-muted">Paste this link in your Instagram, TikTok, or anywhere.</p>
 
     <div class="flex items-center gap-2 rounded-xl border-2 border-ink bg-white p-2">
       <input
@@ -67,7 +67,7 @@
         onclick={copy}
         class="neo-shadow-sm shrink-0 rounded-lg border border-ink bg-sun px-3 py-1.5 font-mono text-xs font-bold"
       >
-        {copied ? 'Tersalin ✓' : 'Salin'}
+        {copied ? 'Copied ✓' : 'Copy'}
       </button>
     </div>
   </div>
