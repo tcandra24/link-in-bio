@@ -7,11 +7,17 @@ declare global {
 		// interface Locals {}
 		// interface PageData {}
 		// interface PageState {}
-		// interface Platform {}
 		interface Locals {
-      supabase: SupabaseClient;
+			supabase: SupabaseClient;
       getUser: () => Promise<User | null>;
-    }
+		}
+
+		interface Platform {
+			env: Env;
+			ctx: ExecutionContext;
+			caches: CacheStorage;
+			cf?: IncomingRequestCfProperties
+		}
 	}
 }
 
