@@ -60,6 +60,22 @@
 	.theme-clay {
 		--edge: var(--color-paper);
 	}
+
+	.dot-text-pill {
+		background-color: rgba(255, 255, 255, 0.94);
+		backdrop-filter: blur(6px);
+		border: 1.5px solid rgba(29, 28, 22, 0.2);
+		box-shadow: 1px 1px 0px rgba(29, 28, 22, 0.12);
+		color: #1d1c16;
+		font-weight: 600;
+	}
+
+	.dot-text-card {
+		background-color: rgba(254, 249, 239, 0.94);
+		backdrop-filter: blur(8px);
+		border: 1.5px solid rgba(29, 28, 22, 0.18);
+		box-shadow: 2px 2px 0px rgba(29, 28, 22, 0.08);
+	}
 }
 
 /* =========================================================

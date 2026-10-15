@@ -57,6 +57,8 @@
 	</span>
 
 	{#if bio}
+	<div class="dot-text-card p-2.5 sm:p-3 rounded-2xl max-w-xl my-4">
 		<p class="mt-3 max-w-lg px-4 text-sm leading-relaxed opacity-80 sm:text-base">{bio}</p>
+	</div>
 	{/if}
 </header>

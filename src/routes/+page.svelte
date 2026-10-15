@@ -177,9 +177,13 @@
             One board for what you share.
           </h1>
 
-          <p class="max-w-xl text-base leading-relaxed text-muted sm:text-lg">
-            It's more than just a row of buttons. Gather your work, social media, shop links, and important notes onto a sticker-collage style bento board.
-          </p>
+          <div class="dot-text-card p-3.5 sm:p-4 rounded-2xl max-w-xl">
+            <p class="font-body text-sm sm:text-base text-ink font-medium leading-relaxed">
+              Bukan sekadar deretan tombol link biasa. Buat portofolio mikro dan kumpulkan karya,
+              media sosial, tautan toko, serta catatan pentingmu dalam papan bento bergaya stiker kolase yang memikat.
+              It's more than just a row of buttons. Gather your work, social media, shop links, and important notes onto a sticker-collage style bento board.
+            </p>
+          </div>
 
           <!-- Klaim username -->
           <form
@@ -224,12 +228,11 @@
           </form>
 
           <div class="flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-xs text-muted">
-            <span class="flex items-center gap-1">
+            <span class="dot-text-pill inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] sm:text-xs">
               <Icon name="lock" class="text-sm text-rust" />
               Secure your unique name first
             </span>
-            <span class="hidden sm:inline">•</span>
-            <span class="flex items-center gap-1">
+            <span class="dot-text-pill inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] sm:text-xs">
               <Icon name="verified" class="text-sm text-pine" />
               Free &amp; instant
             </span>
@@ -323,18 +326,20 @@
     <!-- Fitur -->
     <section id="fitur" class="border-b-2 border-ink bg-dot-grid px-4 py-16 sm:px-8">
       <div class="mx-auto max-w-7xl">
-        <div class="mb-10 max-w-2xl">
+        <div class="text-center mb-10 max-w-2xl mx-auto">
           <span
             class="neo-shadow-sm mb-3 inline-block rounded-full border-2 border-ink bg-lilac px-3 py-1 font-mono text-xs font-bold uppercase"
           >
             Creative freature
           </span>
-          <h2 class="font-display text-3xl font-extrabold tracking-tight sm:text-5xl">
+          <h2 class="font-display text-3xl font-extrabold tracking-tight text-ink sm:text-5xl">
             A Biolink that feels like an original creation.
           </h2>
-          <p class="mt-3 text-muted">            
-            Ditch the boring vertical list. Showcase your world in a canvas format.
-          </p>
+          <div class="dot-text-card px-4 py-2.5 rounded-2xl max-w-xl mx-auto mt-3">
+            <p class="font-body text-sm sm:text-base text-ink font-medium">            
+              Ditch the boring vertical list. Showcase your world in a canvas format.
+            </p>
+          </div>
         </div>
 
         <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
