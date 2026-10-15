@@ -19,6 +19,9 @@
 	--color-washi: #ffe089;
 	--color-candy: #e2f9f0;
 
+  --color-blush: #ffdad6;
+  --color-crimson: #93000a;
+
 	--color-rust: #ae3115;
 	--color-pine: #006b57;
 
@@ -74,11 +77,11 @@
 
 @utility bg-dot-grid {
 	background-image: radial-gradient(var(--color-ink) 0.75px, transparent 0.75px);
-	background-size: 16px 16px;
+	background-size: 20px 20px;
 }
 @utility bg-dot-grid-light {
 	background-image: radial-gradient(var(--color-paper) 0.75px, transparent 0.75px);
-	background-size: 16px 16px;
+	background-size: 20px 20px;
 }
 
 /* =========================================================

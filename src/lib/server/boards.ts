@@ -1,9 +1,10 @@
 import { error } from '@sveltejs/kit';
 import type { Profile, ThemeName, Tile, TileColor, TileSize } from '#lib/types.ts';
-import { createSupabase } from './supabase';
+import type { SupabaseClient } from '@supabase/supabase-js';
+import { normalizeUrl } from '#lib/url.ts';
 
 // Bentuk baris dari database (snake_case)
-interface LinkRow {
+export interface LinkRow {
   id: string;
   title: string;
   subtitle: string | null;
@@ -16,7 +17,7 @@ interface LinkRow {
   is_active: boolean;
 }
 
-interface ProfileRow {
+export interface ProfileRow {
   username: string;
   display_name: string | null;
   bio: string | null;
@@ -27,12 +28,17 @@ interface ProfileRow {
   links: LinkRow[];
 }
 
-function toTile(row: LinkRow): Tile {
+export const PROFILE_COLUMNS =
+  'username, display_name, bio, avatar_url, theme, corner_radius, shadow_depth';
+export const LINK_COLUMNS =
+  'id, title, subtitle, url, size, color, badge, icon, image_url, is_active';
+
+export function toTile(row: LinkRow): Tile {
   return {
     id: row.id,
     title: row.title,
     subtitle: row.subtitle ?? undefined,
-    url: row.url,
+    url: normalizeUrl(row.url) ?? '#',
     size: row.size,
     color: row.color,
     badge: row.badge ?? undefined,
@@ -42,7 +48,7 @@ function toTile(row: LinkRow): Tile {
   };
 }
 
-function toProfile(row: ProfileRow): Profile {
+export function toProfile(row: Omit<ProfileRow, 'links'>): Profile {
   return {
     username: row.username,
     displayName: row.display_name ?? row.username,
@@ -55,8 +61,7 @@ function toProfile(row: ProfileRow): Profile {
 }
 
 /** Ambil profil + link aktif dalam satu query. `null` kalau username belum diklaim. */
-export async function getPublicBoard(username: string) {
-  const supabase = createSupabase();
+export async function getPublicBoard(supabase: SupabaseClient, username: string) {
 
   const { data, error: queryError } = await supabase
     .from('profiles')

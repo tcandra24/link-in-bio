@@ -3,5 +3,7 @@ export const SITE = {
   name: 'plot',
   title: 'Plot - Link Boards & Creative Collages',
   description: 'Bento biolink platform for independent creators: one hub for everything you share.',
-  domain: 'plot.id'
+  domain: 'plot.id',
 } as const;
+
+export const MAX_TILES = 24;

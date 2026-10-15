@@ -27,3 +27,14 @@ export interface Profile {
 	cornerRadius: number; // 8 - 32 (px)
 	shadowDepth: 2 | 4 | 6; // px
 }
+
+// Nilai mentah form petak (semua string, persis seperti yang diketik pengguna)
+export interface TileValues {
+  title: string;
+  subtitle: string;
+  url: string;
+  size: string;
+  color: string;
+  badge: string;
+  icon: string;
+}
