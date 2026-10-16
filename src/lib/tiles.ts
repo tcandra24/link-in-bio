@@ -74,3 +74,5 @@ export const iconLabels: Record<(typeof TILE_ICONS)[number], string> = {
   article: 'Article',
   star: 'Star'
 };
+
+export const THEMES = ['paper', 'clay', 'candy'] as const;

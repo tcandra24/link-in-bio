@@ -23,13 +23,17 @@
   // Tab "Tampilan" dibuka di Hari 5, "Statistik" di Hari 6
   const tabs = [
     { href: '/dashboard', label: 'Plot', icon: 'dashboard_customize' },
-    { href: null, label: 'Appearance', icon: 'palette' },
+    { href: '/dashboard/appearance', label: 'Appearance', icon: 'palette' },
     { href: null, label: 'Statistics', icon: 'bar_chart' }
   ];
 
   let profile = $derived(data.profile);
   let look = $derived(themes[profile.theme]);
 </script>
+
+<svelte:head>
+  <meta name="robots" content="noindex" />
+</svelte:head>
 
 <div class="min-h-screen bg-sand-deep {look.page} {look.dots}">
   <header class="border-b-2 border-ink bg-paper px-4 py-3 sm:px-8">

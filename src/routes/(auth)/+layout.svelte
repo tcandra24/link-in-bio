@@ -12,6 +12,10 @@
   const tabOff = 'text-muted hover:bg-white/50 hover:text-ink';
 </script>
 
+<svelte:head>
+  <meta name="robots" content="noindex" />
+</svelte:head>
+
 <main class="flex min-h-screen flex-col items-center justify-center gap-6 bg-dot-grid px-4 py-10">
   <Logo />
 

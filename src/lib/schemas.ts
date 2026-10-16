@@ -1,4 +1,4 @@
-import { TILE_COLORS, TILE_ICONS, TILE_SIZES } from './tiles';
+import { THEMES, TILE_COLORS, TILE_ICONS, TILE_SIZES } from './tiles';
 import { z } from 'zod';
 import { USERNAME_PATTERN } from './username';
 import { normalizeUrl } from './url';
@@ -60,6 +60,28 @@ export const tileSchema = z.object({
 });
 
 export const idSchema = z.string().uuid('ID not valid');
+
+export const AVATAR_MAX_BYTES = 2 * 1024 * 1024;
+export const AVATAR_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
+
+/** Dipakai di browser (cek cepat) dan di server (yang menentukan). */
+export function avatarProblem(file: { size: number; type: string }): string | null {
+  if (!AVATAR_TYPES.includes(file.type)) return 'Use JPG, PNG, or WebP images';
+  if (file.size > AVATAR_MAX_BYTES) return 'Maximum photo size is 2 MB';
+  return null;
+}
+
+export const appearanceSchema = z.object({
+  displayName: z.string().trim().min(1, 'Display name is required').max(40, 'Maximum 40 characters'),
+  bio: z.string().trim().max(160, 'Maximum 160 characters'),
+  theme: z.enum(THEMES, { message: 'Invalid theme' }),
+  cornerRadius: z.coerce
+    .number()
+    .int('Must be an integer')
+    .min(8, 'Minimum 8')
+    .max(32, 'Maximum 32'),
+  shadowDepth: z.enum(['2', '4', '6'], { message: 'Invalid depth' }).transform(Number)
+});
 
 export type FieldErrors = Partial<Record<string, string[]>>;
 

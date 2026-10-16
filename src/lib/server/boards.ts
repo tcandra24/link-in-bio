@@ -86,3 +86,20 @@ export async function getPublicBoard(supabase: SupabaseClient, username: string)
     tiles: data.links.map(toTile)
   };
 }
+
+/** Semua petak milik satu pengguna (termasuk yang nonaktif; RLS mengizinkan pemilik). */
+export async function getOwnTiles(supabase: SupabaseClient, userId: string): Promise<Tile[]> {
+  const { data, error: queryError } = await supabase
+    .from('links')
+    .select(LINK_COLUMNS)
+    .eq('profile_id', userId)
+    .order('position', { ascending: true })
+    .order('created_at', { ascending: true });
+
+  if (queryError) {
+    console.error('plot failed to load:', queryError.message);
+    error(500, 'Plot cannot be loaded at this time.');
+  }
+
+  return ((data ?? []) as unknown as LinkRow[]).map(toTile);
+}

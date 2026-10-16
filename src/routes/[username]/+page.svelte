@@ -16,11 +16,31 @@
 
   let shareOpen = $state(false);
   let shareUrl = $derived(`${page.url.origin}/${profile.username}`);
+
+  let title = $derived(`${profile.displayName} (@${profile.username}) | ${SITE.name}`);
+  let description = $derived(
+    profile.bio || `All links ${profile.displayName} in one board.`
+  );
 </script>
 
 <svelte:head>
-  <title>{profile.displayName} (@{profile.username}) | {SITE.name}</title>
-  <meta name="description" content={profile.bio ?? `Semua tautan ${profile.displayName} dalam satu papan.`} />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={shareUrl} />
+
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content={SITE.name} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={shareUrl} />
+  {#if profile.avatarUrl}
+    <meta property="og:image" content={profile.avatarUrl} />
+    <meta name="twitter:image" content={profile.avatarUrl} />
+  {/if}
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
 </svelte:head>
 
 <div class="flex min-h-screen flex-col justify-between {look.page} {look.dots}">

@@ -20,7 +20,7 @@
     id = name,
     label,
     type = 'text',
-    value = '',
+    value = $bindable(''),
     error,
     hint,
     placeholder,
@@ -51,6 +51,7 @@
       {name}
       type={inputType}
       {value}
+      oninput={(event) => (value = event.currentTarget.value)}
       {placeholder}
       {autocomplete}
       aria-invalid={error ? 'true' : undefined}

@@ -12,6 +12,9 @@
 
   let look = $derived(themes[profile.theme]);
   let visible = $derived(tiles.filter((tile) => tile.isActive));
+
+  let radius = $derived(Math.round(profile.cornerRadius * 0.7));
+  let depth = $derived(Math.max(1, Math.round(profile.shadowDepth / 2)));
 </script>
 
 <div class="neo-shadow-lg rounded-[44px] bg-ink p-3.5 w-full">
@@ -34,16 +37,19 @@
       </div>
       <p class="font-display text-sm leading-tight font-bold">{profile.displayName}</p>
       <p class="font-mono text-[10px] opacity-70">@{profile.username}</p>
+      {#if profile.bio}
+        <p class="line-clamp-2 max-w-56 text-[10px] opacity-80">{profile.bio}</p>
+      {/if}
     </div>
 
     {#if visible.length > 0}
       <div class="grid auto-rows-[minmax(6.5rem,auto)] grid-cols-2 gap-2">
         {#each visible as tile (tile.id)}
-          <BentoTile {tile} radius={Math.min(profile.cornerRadius, 20)} depth={2} compact />
+          <BentoTile {tile} {radius} {depth} compact />
         {/each}
       </div>
     {:else}
-      <p class="mt-4 text-center font-mono text-[11px] opacity-70">Belum ada petak yang tampil.</p>
+      <p class="mt-4 text-center font-mono text-[11px] opacity-70">No tiles are displayed yet.</p>
     {/if}
   </div>
 </div>

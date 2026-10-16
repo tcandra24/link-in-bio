@@ -1,9 +1,10 @@
-import { error, fail, redirect } from '@sveltejs/kit';
-import type { User } from '@supabase/supabase-js';
+import { fail } from '@sveltejs/kit'; 
+
 import { MAX_TILES } from '#lib/config.ts';
 import { reorder } from '#lib/reorder.ts';
 import { NO_ERRORS, fieldErrors, idSchema, text, tileSchema, type FieldErrors } from '#lib/schemas.ts';
-import { LINK_COLUMNS, toTile, type LinkRow } from '#lib/server/boards.ts';
+import { requireUser } from '#lib/server/auth.ts';
+import { getOwnTiles } from '#lib/server/boards.ts';
 import type { TileValues } from '#lib/types.ts';
 import type { Actions, PageServerLoad } from './$types';
 
@@ -48,29 +49,9 @@ function done(intent: Intent, id = '') {
   return { intent, id, ok: true as const };
 }
 
-async function requireUser(locals: App.Locals): Promise<User> {
-  const user = await locals.getUser();
-  if (!user) redirect(303, '/login');
-  return user;
-}
-
 export const load: PageServerLoad = async ({ locals }) => {
   const user = await requireUser(locals);
-
-  // Pemilik boleh membaca semua link-nya, termasuk yang nonaktif (diatur RLS)
-  const { data, error: queryError } = await locals.supabase
-    .from('links')
-    .select(LINK_COLUMNS)
-    .eq('profile_id', user.id)
-    .order('position', { ascending: true })
-    .order('created_at', { ascending: true });
-
-  if (queryError) {
-    console.error('petak gagal dimuat:', queryError.message);
-    error(500, 'Petak tidak bisa dimuat saat ini.');
-  }
-
-  return { tiles: ((data ?? []) as unknown as LinkRow[]).map(toTile) };
+  return { tiles: await getOwnTiles(locals.supabase, user.id) };
 };
 
 export const actions: Actions = {
