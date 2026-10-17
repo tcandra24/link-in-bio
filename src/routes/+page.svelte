@@ -249,7 +249,7 @@
 
             <div class="neo-shadow-lg w-full rounded-[44px] bg-ink p-3.5">
               <div
-                class="theme-kertas flex min-h-140 flex-col gap-3 rounded-[34px] border-2 border-ink bg-paper bg-dot-grid p-4"
+                class="theme-paper flex min-h-140 flex-col gap-3 rounded-[34px] border-2 border-ink bg-paper bg-dot-grid p-4"
               >
                 <div class="mb-1 h-4 w-28 self-center rounded-full bg-ink"></div>
 
