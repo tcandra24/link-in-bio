@@ -1,12 +1,12 @@
 import { createServerClient } from '@supabase/ssr';
 import { redirect, type Handle } from '@sveltejs/kit';
 import type { User } from '@supabase/supabase-js';
-// import { PUBLIC_SUPABASE_ANON_KEY, PUBLIC_SUPABASE_URL } from '$app/env/public';
+import { PUBLIC_SUPABASE_ANON_KEY, PUBLIC_SUPABASE_URL } from '$app/env/public';
 
 export const handle: Handle = async ({ event, resolve }) => {
   // Client Supabase per request; session dibaca/ditulis lewat cookie
   
-  event.locals.supabase = createServerClient('https://ircptxdwsuonwjnizasr.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlyY3B0eGR3c3Vvbndqbml6YXNyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE5NDAzMzEsImV4cCI6MjEwNzUxNjMzMX0.AAYtl4iqbRGh9wulmwzUJY7J5tcR2Aetj825uRIsXYo', {
+  event.locals.supabase = createServerClient(PUBLIC_SUPABASE_URL, PUBLIC_SUPABASE_ANON_KEY, {
     cookies: {
       getAll: () => event.cookies.getAll(),
       setAll: (cookiesToSet) => {
