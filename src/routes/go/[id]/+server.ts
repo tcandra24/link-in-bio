@@ -6,7 +6,7 @@ import type { RequestHandler } from './$types';
 // /go/<id>: catat klik, lalu alihkan ke URL tujuan.
 export const GET: RequestHandler = async ({ params, locals }) => {
   const id = idSchema.safeParse(params.id);
-  if (!id.success) error(404, 'Tautan tidak ditemukan');
+  if (!id.success) error(404, 'Link not found');
 
   // Satu panggilan: fungsi SQL mencatat klik dan mengembalikan URL (hanya untuk link aktif)
   const { data, error: rpcError } = await locals.supabase.rpc('record_click', {
