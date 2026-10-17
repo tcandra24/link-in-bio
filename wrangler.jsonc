@@ -1,19 +1,12 @@
 {
-	"$schema": "./node_modules/wrangler/config-schema.json",
-	"name": "link-in-bio",
-	"compatibility_date": "2026-10-15",
-	"compatibility_flags": ["nodejs_als"],
+	"name": "plot", // harus unik di akunmu; jadi plot.<subdomain>.workers.dev
 	"main": ".svelte-kit/cloudflare/_worker.js",
+	"compatibility_date": "2026-10-17", // isi tanggal hari kamu mengerjakan ini
+	"compatibility_flags": ["nodejs_compat"],
 	"assets": {
 		"binding": "ASSETS",
 		"directory": ".svelte-kit/cloudflare"
 	},
-	"workers_dev": true,
-	"preview_urls": true,
-	"observability": {
-		"logs": {
-			"enabled": true,
-			"invocation_logs": true
-		}
-	}
+	"placement": { "mode": "smart" }, // jalankan Worker dekat database, bukan dekat pengunjung
+	"observability": { "enabled": true } // log runtime, berguna untuk melacak error
 }
