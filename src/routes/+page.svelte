@@ -403,13 +403,13 @@
               </p>
             </div>
             <div class="flex flex-wrap gap-2 font-mono text-xs font-bold">
-              <a href="/demo?theme=kertas" class="rounded-full border-2 border-ink bg-paper px-3 py-1">
+              <a href="/demo?theme=paper" class="rounded-full border-2 border-ink bg-paper px-3 py-1">
                 Paper
               </a>
-              <a href="/demo?theme=malam" class="rounded-full border-2 border-ink bg-ink px-3 py-1 text-paper">
+              <a href="/demo?theme=clay" class="rounded-full border-2 border-ink bg-ink px-3 py-1 text-paper">
                 Clay
               </a>
-              <a href="/demo?theme=permen" class="rounded-full border-2 border-ink bg-candy px-3 py-1">
+              <a href="/demo?theme=candy" class="rounded-full border-2 border-ink bg-candy px-3 py-1">
                 Candy
               </a>
             </div>
