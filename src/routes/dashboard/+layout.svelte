@@ -24,7 +24,7 @@
   const tabs = [
     { href: '/dashboard', label: 'Plot', icon: 'dashboard_customize' },
     { href: '/dashboard/appearance', label: 'Appearance', icon: 'palette' },
-    { href: null, label: 'Statistics', icon: 'bar_chart' }
+    { href: '/dashboard/statistic', label: 'Statistics', icon: 'bar_chart' }
   ];
 
   let profile = $derived(data.profile);

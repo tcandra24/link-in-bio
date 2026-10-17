@@ -74,7 +74,7 @@
     {#if data.tiles.length > 0}
       <section class="mt-2 grid w-full auto-rows-[minmax(9rem,auto)] grid-cols-2 gap-4">
         {#each data.tiles as tile (tile.id)}
-          <BentoTile {tile} radius={profile.cornerRadius} depth={profile.shadowDepth} />
+          <BentoTile {tile} href="/go/{tile.id}" radius={profile.cornerRadius} depth={profile.shadowDepth} />
         {/each}
       </section>
     {:else}

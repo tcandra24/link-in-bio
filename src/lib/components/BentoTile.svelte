@@ -9,15 +9,17 @@
 		depth?: number;
 		compact?: boolean; // versi kecil untuk mockup ponsel di landing
 		external?: boolean; // buka di tab baru
+		href?: string;
 	}
 
-	let { tile, radius = 24, depth = 4, compact = false, external = true }: Props = $props();
+	let { tile, radius = 24, depth = 4, compact = false, external = true, href }: Props = $props();
 
 	let color = $derived(tileColors[tile.color]);
 </script>
 
 <a
-	href={tile.url}
+	href={href ?? tile.url}
+	data-sveltekit-preload-data={href ? 'off' : undefined}
 	target={external ? '_blank' : undefined}
 	rel={external ? 'noopener noreferrer' : undefined}
 	class="group {tileSizes[

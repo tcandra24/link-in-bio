@@ -110,7 +110,7 @@
             class="neo-shadow-sm inline-flex w-fit cursor-pointer items-center gap-1.5 rounded-full border-2 border-ink bg-sand px-4 py-2 font-display text-sm font-bold hover:bg-washi"
           >
             <Icon name="photo_camera" class="text-base" />
-            {data.profile.avatarUrl || avatarPreview ? 'Ganti foto' : 'Unggah foto'}
+            {data.profile.avatarUrl || avatarPreview ? 'Change photo' : 'Upload photo'}
           </label>
           <input
             bind:this={fileInput}

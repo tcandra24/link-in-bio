@@ -179,9 +179,8 @@
 
           <div class="dot-text-card p-3.5 sm:p-4 rounded-2xl max-w-xl">
             <p class="font-body text-sm sm:text-base text-ink font-medium leading-relaxed">
-              Bukan sekadar deretan tombol link biasa. Buat portofolio mikro dan kumpulkan karya,
-              media sosial, tautan toko, serta catatan pentingmu dalam papan bento bergaya stiker kolase yang memikat.
-              It's more than just a row of buttons. Gather your work, social media, shop links, and important notes onto a sticker-collage style bento board.
+              It's more than just a simple row of link buttons. 
+              Create a micro-portfolio and bring together your work, social media, shop links, and key notes on a bento-style board, designed with an engaging, sticker-collage aesthetic.
             </p>
           </div>
 

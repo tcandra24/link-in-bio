@@ -3,7 +3,7 @@ import { getPublicBoard } from '#lib/server/boards.ts';
 import { isValidUsername } from '#lib/username.ts';
 import type { PageServerLoad } from './$types';
 
-export const load: PageServerLoad = async ({ params, locals }) => {
+export const load: PageServerLoad = async ({ params, locals, setHeaders }) => {
   const username = params.username.toLowerCase();
 
   // /Demo -> /demo (satu alamat kanonik per papan)
@@ -21,6 +21,8 @@ export const load: PageServerLoad = async ({ params, locals }) => {
   if (!board) {
     error(404, `Board @${username} not found`);
   }
+
+  setHeaders({ 'cache-control': 'public, max-age=0, s-maxage=60, stale-while-revalidate=300' });
 
   return board; // { profile, tiles }
 };
