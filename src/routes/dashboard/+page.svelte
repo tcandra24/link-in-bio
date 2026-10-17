@@ -77,7 +77,7 @@
 <main class="mx-auto grid max-w-6xl gap-8 px-4 py-8 sm:px-8 lg:grid-cols-[minmax(0,1fr)_360px]">
   <div class="flex min-w-0 flex-col gap-5">
     {#if form?.message}
-      <Alert message={form.message} title="Perubahan belum berhasil" />
+      <Alert message={form.message} title="The change has not been successful" />
     {:else if notice}
       <div
         role="status"
@@ -99,7 +99,7 @@
       >
         <span class="flex items-center gap-2 font-display text-lg font-bold">
           <Icon name={adding ? 'remove' : 'add'} class="text-xl" />
-          {atLimit ? `Batas ${MAX_TILES} petak tercapai` : 'Tambah petak'}
+          {atLimit ? `Limit ${MAX_TILES} plot reached` : 'Add plot'}
         </span>
         <span class="font-mono text-xs text-muted">{data.tiles.length}/{MAX_TILES}</span>
       </button>
@@ -134,13 +134,13 @@
     <section class="flex flex-col gap-3">
       <div class="flex items-center justify-between px-1">
         <h2 class="flex items-center gap-2 font-display text-lg font-bold">
-          Daftar petak
+          List plots
           <span class="rounded-full border border-ink bg-sand px-2 py-0.5 font-mono text-xs">
-            {activeCount} tampil
+            {activeCount} showing
           </span>
         </h2>
         <span class="flex items-center gap-1 font-mono text-xs text-muted">
-          <Icon name="swap_vert" class="text-sm" /> Urutan dari atas
+          <Icon name="swap_vert" class="text-sm" /> Order from top
         </span>
       </div>
 
@@ -148,7 +148,7 @@
         <div
           class="rounded-3xl border-2 border-dashed border-ink/40 p-10 text-center text-sm text-muted"
         >
-          Papanmu masih kosong. Tambahkan petak pertamamu.
+          Your board is empty. Add your first plot.
         </div>
       {/if}
 
@@ -170,7 +170,7 @@
                       <button
                         type="submit"
                         disabled={direction === 'up' ? i === 0 : i === data.tiles.length - 1}
-                        aria-label={direction === 'up' ? 'Pindah ke atas' : 'Pindah ke bawah'}
+                        aria-label={direction === 'up' ? 'Move up' : 'Move down'}
                         class="hover:text-ink disabled:opacity-20"
                       >
                         <Icon
@@ -208,7 +208,7 @@
                     type="submit"
                     role="switch"
                     aria-checked={tile.isActive}
-                    aria-label={tile.isActive ? 'Sembunyikan petak' : 'Tampilkan petak'}
+                    aria-label={tile.isActive ? 'Hide plot' : 'Show plot'}
                     class="neo-shadow-sm flex h-7 w-12 items-center rounded-full border-2 border-ink p-1 transition-colors {tile.isActive
                       ? 'justify-end bg-pine'
                       : 'justify-start bg-sand'}"
@@ -231,13 +231,13 @@
                   method="POST"
                   action="?/delete"
                   use:enhance={({ cancel }) => {
-                    if (!confirm(`Hapus petak "${tile.title}"?`)) cancel();
+                    if (!confirm(`Delete plot "${tile.title}"?`)) cancel();
                   }}
                 >
                   <input type="hidden" name="id" value={tile.id} />
                   <button
                     type="submit"
-                    aria-label="Hapus petak"
+                    aria-label="Delete plot"
                     class="{iconButton} text-crimson hover:bg-blush"
                   >
                     <Icon name="delete" class="text-base" />
@@ -260,13 +260,13 @@
                 <input type="hidden" name="id" value={tile.id} />
                 <TileForm uid="edit-{tile.id}" values={editValues(tile)} errors={editErrors(tile)} />
                 <div class="mt-5 flex gap-2">
-                  <button type="submit" class={primaryButton}>Simpan perubahan</button>
+                  <button type="submit" class={primaryButton}>Save changes</button>
                   <button
                     type="button"
                     onclick={() => (editingId = null)}
                     class="rounded-full border-2 border-ink bg-sand px-5 py-2.5 font-display text-sm font-bold hover:bg-washi"
                   >
-                    Batal
+                    Cancel
                   </button>
                 </div>
               </form>
