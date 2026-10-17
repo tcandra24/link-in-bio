@@ -101,8 +101,8 @@
       </div>
 
       <nav class="hidden items-center gap-6 font-display text-sm font-bold lg:flex">
-        <a href="#cara-kerja" class="transition-colors hover:text-rust">How it works</a>
-        <a href="#fitur" class="transition-colors hover:text-rust">Features</a>
+        <a href="#how-to" class="transition-colors hover:text-rust">How it works</a>
+        <a href="#feature" class="transition-colors hover:text-rust">Features</a>
         <a href="/demo" class="transition-colors hover:text-rust">Board examples</a>
       </nav>
 
@@ -135,10 +135,10 @@
       <nav
         class="mt-3 flex animate-fade-in flex-col gap-2 border-t-2 border-ink pt-3 font-display text-sm font-bold lg:hidden"
       >
-        <a href="#cara-kerja" onclick={() => (menuOpen = false)} class="rounded-lg p-2 hover:bg-sand">
+        <a href="#how-to" onclick={() => (menuOpen = false)} class="rounded-lg p-2 hover:bg-sand">
           How it works
         </a>
-        <a href="#fitur" onclick={() => (menuOpen = false)} class="rounded-lg p-2 hover:bg-sand">
+        <a href="#feature" onclick={() => (menuOpen = false)} class="rounded-lg p-2 hover:bg-sand">
           Features
         </a>
         <a
@@ -285,7 +285,7 @@
     </section>
 
     <!-- Cara kerja -->
-    <section id="cara-kerja" class="border-b-2 border-ink bg-sand-deep px-4 py-16 sm:px-8">
+    <section id="how-to" class="border-b-2 border-ink bg-sand-deep px-4 py-16 sm:px-8">
       <div class="mx-auto max-w-7xl">
         <div class="mb-10 max-w-2xl">
           <div
@@ -322,8 +322,8 @@
       </div>
     </section>
 
-    <!-- Fitur -->
-    <section id="fitur" class="border-b-2 border-ink bg-dot-grid px-4 py-16 sm:px-8">
+    <!-- feature -->
+    <section id="feature" class="border-b-2 border-ink bg-dot-grid px-4 py-16 sm:px-8">
       <div class="mx-auto max-w-7xl">
         <div class="text-center mb-10 max-w-2xl mx-auto">
           <span
@@ -461,8 +461,8 @@
         <p class="opacity-70">Link curation, galleries, music &amp; story in one bento canvas.</p>
       </div>
       <nav class="flex gap-5 font-bold">
-        <a href="#cara-kerja" class="hover:text-sun">How it works</a>
-        <a href="#fitur" class="hover:text-sun">Features</a>
+        <a href="#how-to" class="hover:text-sun">How it works</a>
+        <a href="#feature" class="hover:text-sun">Features</a>
         <a href="/demo" class="hover:text-sun">Demo</a>
       </nav>
     </div>

@@ -86,7 +86,7 @@
     {/if}
 
     <!-- Ajakan membuat papan sendiri -->
-    <div class="mt-12 flex flex-col items-center gap-2">
+    <div class="mt-12 flex flex-col items-center gap-3">
       <a
         href="/register"
         class="neo-shadow flex items-center gap-2 rounded-full border-2 border-ink bg-paper px-6 py-3 font-display text-sm font-bold text-ink transition-all hover:neo-shadow-lg active:translate-x-0.5 active:translate-y-0.5"
@@ -94,7 +94,7 @@
         Create your own board on {SITE.name}
         <Icon name="arrow_forward" class="text-base" />
       </a>
-      <span class="font-mono text-[11px] font-bold tracking-widest uppercase opacity-60">
+      <span class="font-mono text-[11px] font-bold tracking-widest uppercase dot-text-card p-2 rounded-xl">
         Bento link board • {SITE.domain}
       </span>
     </div>
