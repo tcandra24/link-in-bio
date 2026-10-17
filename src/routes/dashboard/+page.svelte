@@ -71,7 +71,7 @@
 </script>
 
 <svelte:head>
-  <title>Petak | Dashboard</title>
+  <title>Plot | Dashboard</title>
 </svelte:head>
 
 <main class="mx-auto grid max-w-6xl gap-8 px-4 py-8 sm:px-8 lg:grid-cols-[minmax(0,1fr)_360px]">
