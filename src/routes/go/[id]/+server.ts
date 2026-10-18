@@ -22,5 +22,7 @@ export const GET: RequestHandler = async ({ params, locals }) => {
   const target = typeof data === 'string' ? normalizeUrl(data) : null;
   if (!target) error(404, 'The link cannot be found.');
 
-  redirect(302, target);
+  redirect(302, target, {
+    external: true
+  });
 };
