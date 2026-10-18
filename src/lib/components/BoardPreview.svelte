@@ -35,10 +35,10 @@
           {profile.displayName.charAt(0).toUpperCase()}
         {/if}
       </div>
-      <p class="font-display text-sm leading-tight font-bold">{profile.displayName}</p>
-      <p class="font-mono text-[10px] opacity-70">@{profile.username}</p>
+      <p class="font-display text-sm leading-tight font-bold dot-text-card py-1 px-2 rounded-lg my-1">{profile.displayName}</p>
+      <p class="font-mono text-[10px] dot-text-card py-1 px-2 rounded-lg my-1">@{profile.username}</p>
       {#if profile.bio}
-        <p class="line-clamp-2 max-w-56 text-[10px] opacity-80">{profile.bio}</p>
+        <p class="line-clamp-2 max-w-56 text-[10px] dot-text-card py-1 px-2 rounded-lg my-1">{profile.bio}</p>
       {/if}
     </div>
 
@@ -49,7 +49,7 @@
         {/each}
       </div>
     {:else}
-      <p class="mt-4 text-center font-mono text-[11px] dot-text-card rounded-lg">No tiles are displayed yet.</p>
+      <p class="mt-4 text-center font-mono text-[11px] dot-text-card py-1 rounded-lg">No tiles are displayed yet.</p>
     {/if}
   </div>
 </div>

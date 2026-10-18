@@ -6,7 +6,7 @@
     title?: string;
   }
 
-  let { message, title = 'Periksa kembali data kamu' }: Props = $props();
+  let { message, title = 'Double-check your data' }: Props = $props();
 </script>
 
 <div
