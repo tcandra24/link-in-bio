@@ -146,7 +146,7 @@
 
       {#if data.tiles.length === 0}
         <div
-          class="rounded-3xl border-2 border-dashed border-ink/40 p-10 text-center text-sm text-muted"
+          class="rounded-3xl border-2 border-dashed border-ink/40 p-10 text-center text-sm text-muted bg-[#fef9eff0]"
         >
           Your board is empty. Add your first plot.
         </div>

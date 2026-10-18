@@ -49,7 +49,7 @@
         {/each}
       </div>
     {:else}
-      <p class="mt-4 text-center font-mono text-[11px] opacity-70">No tiles are displayed yet.</p>
+      <p class="mt-4 text-center font-mono text-[11px] dot-text-card rounded-lg">No tiles are displayed yet.</p>
     {/if}
   </div>
 </div>
